@@ -1,6 +1,10 @@
-const { soma } = require('./index.js');
+const { mdLinks, readFile } = require('./index.js');
+
+//chamada da biblio chalk para estilização
 const chalk = require('chalk');
 
-const resultado = soma(1, 3);
+// estilização através do console.log
+//console.log(chalk.bgGreen("a soma é: "), chalk.blue(resultado));
 
-console.log(chalk.blue(resultado));
+const inputs = process.argv
+console.log(inputs)
