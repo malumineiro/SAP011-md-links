@@ -56,5 +56,7 @@ Chrome](https://developers.google.com/v8/). Ele permite a execução de JavaScri
 ## 5. Testes unitários 
 
 ## 6. Tecnologias utilizadas 
-
+![icons](image-5.png) 
 ## 7. Desenvolvedora
+
+Maria Luiza Mineiro [GitHub](https://github.com/malumineiro) | [LinkedIn](https://www.linkedin.com/in/maria-luiza-mineiro/)
