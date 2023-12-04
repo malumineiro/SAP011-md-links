@@ -3,7 +3,7 @@ const fs = require('fs');
 const path = require('path');
 
 // função de extrair links
-function mdLinks(caminhoDoArquivo) {
+function mdLinks(caminhoDoArquivo, options) {
   return new Promise((resolve, reject) => {
     // verifica se o caminho do arquivo é relativo ou absoluto
     const caminhoAbsoluto = path.resolve(caminhoDoArquivo);
@@ -27,12 +27,33 @@ function mdLinks(caminhoDoArquivo) {
           file: caminhoAbsoluto
         });
       });
-
+      if(options.validate === false){
       resolve(links);
+      } else {
+        const linksValidados = links.map(link => {
+          return fetch(link.href).then(response => {
+            link.status = response.status
+            if(response.status >= 200 && response.status <= 299){
+            
+              link.ok = 'ok'
+            } else{
+              link.ok = 'fail'
+            }
+            return link;
+          }
+          ).catch(err => {
+            link.ok = 'fail'
+            link.status = 'not found'
+            return link
+          })
+        })
+        resolve(Promise.all(linksValidados))
+      }
+      
     });
   });
 }
 
-mdLinks('./README.md').then(result => console.log(result)).catch(error => console.error(error));
+mdLinks('./README.md', {validate: true}).then(result => console.log(result)).catch(error => console.error(error));
 
 module.exports = { mdLinks };
