@@ -3,11 +3,11 @@ const fs = require('fs');
 const path = require('path');
 
 // função de extrair links
-function mdLinks(caminhoDoArquivo, options) {
+function mdLinks(filePath, options) {
   return new Promise((resolve, reject) => {
     // verifica se o caminho do arquivo é relativo ou absoluto
-    const caminhoAbsoluto = path.resolve(caminhoDoArquivo);
-    fs.readFile(caminhoAbsoluto, 'utf8', (err, data) => {
+    const absolutePath = path.resolve(filePath);
+    fs.readFile(absolutePath, 'utf8', (err, data) => {
       if (err) {
         reject(err);
         return;
@@ -24,13 +24,13 @@ function mdLinks(caminhoDoArquivo, options) {
         links.push({
           href: match[2],
           text: match[1],
-          file: caminhoAbsoluto
+          file: absolutePath
         });
       });
       if(options.validate === false){
       resolve(links);
       } else {
-        const linksValidados = links.map(link => {
+        const validLinks = links.map(link => {
           return fetch(link.href).then(response => {
             link.status = response.status
             if(response.status >= 200 && response.status <= 299){
@@ -47,7 +47,7 @@ function mdLinks(caminhoDoArquivo, options) {
             return link
           })
         })
-        resolve(Promise.all(linksValidados))
+        resolve(Promise.all(validLinks))
       }
       
     });
