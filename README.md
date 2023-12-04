@@ -38,7 +38,7 @@ executado com Node.js. e promove aprendizado sobre processos
 construído com o [motor de JavaScript V8 do
 Chrome](https://developers.google.com/v8/). Ele permite a execução de JavaScript no nosso sistema operacional, seja no seu computador ou em um servidor, o que abre portas para poder interagir com sistemas, arquivos, redes e etc.
 
-Para desenvolver o projeto segui as sugestões de Marcos do canal do Slack e os conteúdos das oficinas de Checkout MdLinks realizadas durante o Bootcamp da Laboratória. 
+Para desenvolver o projeto segui as sugestões de Marcos de escopo reduzido do canal do Slack e os conteúdos das oficinas de Checkout MdLinks realizadas durante o Bootcamp da Laboratória. 
 
 ## 3. Funcionalidades
 * Leitura e extração de links de um arquivo Markdown (.md);
