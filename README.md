@@ -42,9 +42,7 @@ Para desenvolver o projeto segui as sugestões de Marcos do canal do Slack e os 
 
 ## 3. Funcionalidades
 * Leitura e extração de links de um arquivo Markdown (.md);
-* Validação dos links com exibição do HTTP status code de cada link utilizando a opção --validate;
-* Dados estatísticos dos links contidos no arquivo .md utilizando a opção --stats;
-* Combinação de validação (--validate) e dados estastíticos dos links (--stats) com informações sobre links totais, únicos e quebrados.
+* Validação dos links com exibição de 'href', 'text', 'file', 'status' e 'ok' de cada link utilizando a option --validate;
 * Mensagens de erro para os comandos executados incorretamente pelos usuários.
 
 ## 4. Instalação e uso
