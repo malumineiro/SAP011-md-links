@@ -4,6 +4,9 @@
   "engines": {
     "node": ">=16.x"
   },
+  "scripts": {
+    "test": "jest --coverage --verbose"
+  },
   "bootcamp": {
     "createdAt": "2023-09-20T11:50:43.165Z",
     "version": "6.2.0",
@@ -11,5 +14,8 @@
   },
   "dependencies": {
     "chalk": "^4.1.2"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
   }
 }

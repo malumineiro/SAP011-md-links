@@ -5,9 +5,7 @@ const path = require('path');
 // função de extrair links
 function mdLinks(filePath, options) {
   return new Promise((resolve, reject) => {
-    // verifica se o caminho do arquivo é relativo ou absoluto
-    const absolutePath = path.resolve(filePath);
-    fs.readFile(absolutePath, 'utf8', (err, data) => {
+    fs.readFile(filePath, 'utf8', (err, data) => {
       if (err) {
         reject(err);
         return;
@@ -24,7 +22,7 @@ function mdLinks(filePath, options) {
         links.push({
           href: match[2],
           text: match[1],
-          file: absolutePath
+          file: filePath
         });
       });
       if(options.validate === false){
@@ -43,7 +41,7 @@ function mdLinks(filePath, options) {
           }
           ).catch(err => {
             link.ok = 'fail'
-            link.status = 'not found'
+            link.status = 'invalid link'
             return link
           })
         })
@@ -54,6 +52,6 @@ function mdLinks(filePath, options) {
   });
 }
 
-mdLinks('./README.md', {validate: true}).then(result => console.log(result)).catch(error => console.error(error));
+mdLinks('./test/files/malu.md', {validate: true}).then(result => console.log(result)).catch(error => console.error(error));
 
 module.exports = { mdLinks };

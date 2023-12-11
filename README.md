@@ -42,7 +42,7 @@ Para desenvolver o projeto segui as sugestões de Marcos de escopo reduzido do c
 
 ## 3. Funcionalidades
 * Leitura e extração de links de um arquivo Markdown (.md);
-* Validação dos links com exibição de 'href', 'text', 'file', 'status' e 'ok' de cada link utilizando a option --validate;
+* Validação dos links com exibição de _'href', 'text', 'file', 'status'_ e _'ok'_ de cada link utilizando a option --validate;
 * Mensagens de erro para os comandos executados incorretamente pelos usuários.
 
 ## 4. Instalação e uso
@@ -60,4 +60,4 @@ Para desenvolver o projeto segui as sugestões de Marcos de escopo reduzido do c
 
 ## 7. Desenvolvedora
 
-Maria Luiza Mineiro [GitHub](https://github.com/malumineiro) | [LinkedIn](https://www.linkedin.com/in/maria-luiza-mineiro/)
+**Maria Luiza Mineiro** [GitHub](https://github.com/malumineiro) | [LinkedIn](https://www.linkedin.com/in/maria-luiza-mineiro/)
